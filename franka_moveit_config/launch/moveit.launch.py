@@ -78,6 +78,9 @@ def generate_launch_description():
     kinematics_yaml = load_yaml(
         'franka_moveit_config', 'config/kinematics.yaml'
     )
+    joint_limits_yaml = load_yaml(
+        "franka_moveit_config", "config/joint_limits.yaml"
+    )
 
     # Planning Functionality
     ompl_planning_pipeline_config = {
@@ -130,6 +133,7 @@ def generate_launch_description():
             robot_description,
             robot_description_semantic,
             kinematics_yaml,
+            joint_limits_yaml,
             ompl_planning_pipeline_config,
             trajectory_execution,
             moveit_controllers,
@@ -150,8 +154,12 @@ def generate_launch_description():
         parameters=[
             robot_description,
             robot_description_semantic,
-            ompl_planning_pipeline_config,
             kinematics_yaml,
+            joint_limits_yaml,
+            ompl_planning_pipeline_config,
+            trajectory_execution,
+            moveit_controllers,
+            planning_scene_monitor_parameters,
         ],
     )
 

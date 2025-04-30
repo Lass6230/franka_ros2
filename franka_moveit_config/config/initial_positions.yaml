@@ -1,0 +1,10 @@
+# Default initial positions for brick_builder_iiwa14's ros2_control fake system
+
+initial_positions:
+  _joint1: 0
+  _joint2: 0
+  _joint3: 0
+  _joint4: -1.57
+  _joint5: 0
+  _joint6: 1.57
+  _joint7: 0
